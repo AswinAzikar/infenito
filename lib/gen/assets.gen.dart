@@ -20,10 +20,21 @@ class $AssetsPngsGen {
   List<AssetGenImage> get values => [signupBg];
 }
 
+class $AssetsSvgsGen {
+  const $AssetsSvgsGen();
+
+  /// File path: assets/svgs/linear_coffee_gradient.svg
+  String get linearCoffeeGradient => 'assets/svgs/linear_coffee_gradient.svg';
+
+  /// List of all assets
+  List<String> get values => [linearCoffeeGradient];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsPngsGen pngs = $AssetsPngsGen();
+  static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
 }
 
 class AssetGenImage {
