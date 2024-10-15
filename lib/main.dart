@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:infenito/Utils/size_utils.dart';
 import 'package:infenito/routes/routes.dart';
 import 'package:infenito/themes/themes.dart';
 
@@ -15,7 +16,13 @@ class MyApp extends StatelessWidget {
       theme: normalTheme,
       initialRoute: AppRoutes.signUp,
       routes: AppRoutes.routes,
-      //  routes: ,
+      builder: (context, child) {
+        return Sizer(
+          builder: (context, orientation, deviceType) {
+            return AppRoutes.getResponsiveSignUp(context, orientation);
+          },
+        );
+      },
     );
   }
 }

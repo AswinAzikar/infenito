@@ -1,6 +1,5 @@
-// lib/routes.dart
-
 import 'package:flutter/material.dart';
+import 'package:infenito/Utils/size_utils.dart';
 import '../views/signup_screen.dart';
 
 class AppRoutes {
@@ -9,13 +8,18 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> get routes {
     return {
-
-
-
-      
       signUp: (context) => const SignUpScreen(),
-      //   home: (context) => HomePage(),
-      // second: (context) => SecondPage(),
+      
     };
+  }
+
+  static Widget getResponsiveSignUp(
+      BuildContext context, Orientation orientation) {
+    
+    return  Sizer(
+      builder: (context, orientation, deviceType) {
+        return const SignUpScreen();
+      },
+    );
   }
 }
