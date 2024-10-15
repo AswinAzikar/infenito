@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
-
 
 const double padding = 8;
 const double paddingLarge = 16;
@@ -17,3 +15,8 @@ const gapXL = Gap(paddingXL);
 const gapXXL = Gap(paddingXXL);
 const gapSmall = Gap(paddingSmall);
 const gapTiny = Gap(paddingTiny);
+
+const buttonGradient = LinearGradient(colors: [
+  Color(0xff4D2B1A),
+  Color(0xffA7745A),
+]);

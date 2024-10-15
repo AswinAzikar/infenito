@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 import 'package:infenito/Utils/size_utils.dart';
 import 'package:infenito/constants/constants.dart';
 import 'package:infenito/gen/assets.gen.dart';
 import 'package:infenito/themes/app_text_style.dart';
 import 'package:infenito/themes/themes.dart';
+import 'package:infenito/widgets/buttons.dart';
 import 'package:infenito/widgets/glass_morphic_container.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -17,6 +19,8 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
+    Gap gap1 = Gap(SizeUtils.width * .1);
+    Gap gap2 = Gap(SizeUtils.width * .2);
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -42,7 +46,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             left: 0,
             child: Padding(
               padding: const EdgeInsets.fromLTRB(
-                  paddingXL, paddingLarge, paddingXL, paddingLarge),
+                  paddingXL, padding, paddingXL, paddingLarge),
               child: GlassmorphicContainer(
                 borderRadius: 25,
                 borderThickness: 2,
@@ -52,6 +56,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      gap1,
                       Image.asset(
                         Assets.pngs.asset111.path,
                         width: 89.fSize,
@@ -141,6 +146,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                               ),
                             ),
+                            gap2,
+                            LoadingButton(
+                                buttonLoading: false,
+                                text: "Login",
+                                onPressed: () {}),
+                            gap1,
+                            LoadingButton(
+                                buttonType: ButtonType.outlined,
+                                buttonLoading: false,
+                                text: "Signup",
+                                onPressed: () {}),
+                            gap1,
+                            TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "Privacy Policy",
+                                  style: context.inter40014
+                                      .copyWith(color: Colors.white),
+                                )),
+                            gap1,
                           ],
                         ),
                       )
