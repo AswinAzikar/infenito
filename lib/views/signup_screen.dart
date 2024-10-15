@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:infenito/gen/assets.gen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -10,6 +11,14 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: Image.asset(
+          Assets.pngs.signupBg.path,
+          fit: BoxFit.fitHeight,
+        ),
+      ),
+    );
   }
 }
