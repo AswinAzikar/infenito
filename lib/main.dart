@@ -17,9 +17,11 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.signUp,
       routes: AppRoutes.routes,
       builder: (context, child) {
+        
         return Sizer(
           builder: (context, orientation, deviceType) {
-            return AppRoutes.getResponsiveSignUp(context, orientation);
+            
+            return child ?? const SizedBox(); 
           },
         );
       },

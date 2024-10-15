@@ -4,8 +4,8 @@ import 'package:gap/gap.dart';
 import 'package:infenito/Utils/size_utils.dart';
 import 'package:infenito/constants/constants.dart';
 import 'package:infenito/gen/assets.gen.dart';
+import 'package:infenito/routes/routes.dart';
 import 'package:infenito/themes/app_text_style.dart';
-import 'package:infenito/themes/themes.dart';
 import 'package:infenito/widgets/buttons.dart';
 import 'package:infenito/widgets/glass_morphic_container.dart';
 
@@ -23,6 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     Gap gap2 = Gap(SizeUtils.width * .2);
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
@@ -150,13 +151,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             LoadingButton(
                                 buttonLoading: false,
                                 text: "Login",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, AppRoutes.navigation);
+                                }),
                             gap1,
                             LoadingButton(
                                 buttonType: ButtonType.outlined,
                                 buttonLoading: false,
                                 text: "Signup",
-                                onPressed: () {}),
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, AppRoutes.navigation);
+                                }),
                             gap1,
                             TextButton(
                                 onPressed: () {},
