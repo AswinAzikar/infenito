@@ -78,9 +78,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: Color(0xffF9F9F9),
                                 ),
                                 child: SvgPicture.asset(
-                                 
+                                  width: 8,
+                                  height:5 ,
                                   Assets.svgs.deleteIcon,
-                                //  fit: BoxFit.contain,
+                                   fit: BoxFit.contain,
                                 ),
                               )),
                               gap,
