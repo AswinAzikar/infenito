@@ -1,6 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infenito/Utils/size_utils.dart';
 import 'package:infenito/constants/constants.dart';
+import 'package:infenito/gen/assets.gen.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
@@ -12,11 +16,27 @@ class NavigationScreen extends StatefulWidget {
 class _NavigationScreenState extends State<NavigationScreen> {
   int _selectedIndex = 0;
 
-  // Define your active and inactive icons
-  final List<IconData> _inactiveIcons = [Icons.abc, Icons.catching_pokemon];
-  final List<IconData> _activeIcons = [
-    Icons.abc_outlined,
-    Icons.catching_pokemon
+  final List<SvgPicture> _inactiveIcons = [
+    SvgPicture.asset(Assets.svgs.home),
+    SvgPicture.asset(Assets.svgs.profile),
+    SvgPicture.asset(Assets.svgs.wallet),
+    SvgPicture.asset(Assets.svgs.delete),
+    SvgPicture.asset(Assets.svgs.message)
+  ];
+  final List<SvgPicture> _activeIcons = [
+    SvgPicture.asset(Assets.svgs.homeActive),
+    SvgPicture.asset(Assets.svgs.profileActive),
+    SvgPicture.asset(Assets.svgs.walletActive),
+    SvgPicture.asset(Assets.svgs.deleteActive),
+    SvgPicture.asset(Assets.svgs.messageActive)
+  ];
+
+  final List<Widget> _pages = [
+    const Center(child: Text("Home Page")),
+    const Center(child: Text("Profile Page")),
+    const Center(child: Text("Wallet Page")),
+    const Center(child: Text("delete Page")),
+    const Center(child: Text("Notification Page"))
   ];
 
   void _onItemTapped(int index) {
@@ -30,30 +50,36 @@ class _NavigationScreenState extends State<NavigationScreen> {
     return MaterialApp(
       home: Scaffold(
         extendBody: true,
-        backgroundColor: Colors.blue,
-        body: const Center(
-          child:
-              Text("Home", style: TextStyle(color: Colors.white, fontSize: 24)),
-        ),
+        backgroundColor: Colors.brown[100],
+        body: _pages[_selectedIndex],
         appBar: AppBar(),
-        bottomNavigationBar: Stack(
-          alignment: Alignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(
-                  paddingLarge, padding, paddingLarge, padding),
+        bottomNavigationBar: Container(
+          height: SizeUtils.width * .16,
+          margin: EdgeInsets.fromLTRB(
+              SizeUtils.width * .03,
+              SizeUtils.width * .05,
+              SizeUtils.width * .03,
+              SizeUtils.width * .05),
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.5),
+            borderRadius: const BorderRadius.all(Radius.circular(paddingLarge)),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 8,
+                spreadRadius: 2,
+              ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: const BorderRadius.all(Radius.circular(paddingLarge)),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
-                height: SizeUtils.width * .15,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 8,
-                      spreadRadius: 2,
-                    ),
-                  ],
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.4),
+                  borderRadius:
+                      const BorderRadius.all(Radius.circular(paddingLarge)),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -63,7 +89,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                 ),
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -76,15 +102,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            isSelected ? _activeIcons[index] : _inactiveIcons[index],
-            color: isSelected ? Colors.blue : Colors.grey,
-          ),
-          if (isSelected) // Optional label for selected item
-            const Text(
-              'Selected',
-              style: TextStyle(color: Colors.blue),
-            ),
+          isSelected ? _activeIcons[index] : _inactiveIcons[index],
         ],
       ),
     );

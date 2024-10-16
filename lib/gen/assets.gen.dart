@@ -337,14 +337,57 @@ class $AssetsPngsGen {
 class $AssetsSvgsGen {
   const $AssetsSvgsGen();
 
+  /// File path: assets/svgs/delete.svg
+  String get delete => 'assets/svgs/delete.svg';
+
+  /// File path: assets/svgs/delete_active.svg
+  String get deleteActive => 'assets/svgs/delete_active.svg';
+
+  /// File path: assets/svgs/home.svg
+  String get home => 'assets/svgs/home.svg';
+
+  /// File path: assets/svgs/home_active.svg
+  String get homeActive => 'assets/svgs/home_active.svg';
+
   /// File path: assets/svgs/linear_coffee_gradient.svg
   String get linearCoffeeGradient => 'assets/svgs/linear_coffee_gradient.svg';
+
+  /// File path: assets/svgs/message.svg
+  String get message => 'assets/svgs/message.svg';
+
+  /// File path: assets/svgs/message_active.svg
+  String get messageActive => 'assets/svgs/message_active.svg';
+
+  /// File path: assets/svgs/profile.svg
+  String get profile => 'assets/svgs/profile.svg';
+
+  /// File path: assets/svgs/profile_active.svg
+  String get profileActive => 'assets/svgs/profile_active.svg';
+
+  /// File path: assets/svgs/wallet.svg
+  String get wallet => 'assets/svgs/wallet.svg';
+
+  /// File path: assets/svgs/wallet_active.svg
+  String get walletActive => 'assets/svgs/wallet_active.svg';
 
   /// File path: assets/svgs/welcome_tag.svg
   String get welcomeTag => 'assets/svgs/welcome_tag.svg';
 
   /// List of all assets
-  List<String> get values => [linearCoffeeGradient, welcomeTag];
+  List<String> get values => [
+        delete,
+        deleteActive,
+        home,
+        homeActive,
+        linearCoffeeGradient,
+        message,
+        messageActive,
+        profile,
+        profileActive,
+        wallet,
+        walletActive,
+        welcomeTag
+      ];
 }
 
 class Assets {
