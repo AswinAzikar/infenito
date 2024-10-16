@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.transparent,
       body: Column(
         children: [
@@ -70,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               InkWell(
                                   child: Container(
+                                padding: const EdgeInsets.all(padding + 2),
                                 height: 40.h,
                                 width: 40.h,
                                 decoration: const BoxDecoration(
@@ -79,9 +81,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 child: SvgPicture.asset(
                                   width: 8,
-                                  height:5 ,
+                                  height: 5,
                                   Assets.svgs.deleteIcon,
-                                   fit: BoxFit.contain,
+                                  fit: BoxFit.contain,
                                 ),
                               )),
                               gap,
@@ -95,6 +97,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           )
                         ],
                       ),
+                      gap,
+                      Row(
+                        children: [
+                          SizedBox(
+                              height: SizeUtils.width * .07,
+                              width: SizeUtils.width,
+                              child: TextFormField()),
+                        ],
+                      )
                     ],
                   ),
                 ),
