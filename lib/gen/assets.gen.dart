@@ -383,6 +383,15 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/profile_active.svg
   String get profileActive => 'assets/svgs/profile_active.svg';
 
+  /// File path: assets/svgs/scroll_card.svg
+  String get scrollCard => 'assets/svgs/scroll_card.svg';
+
+  /// File path: assets/svgs/search.svg
+  String get search => 'assets/svgs/search.svg';
+
+  /// File path: assets/svgs/search_setttings.svg
+  String get searchSetttings => 'assets/svgs/search_setttings.svg';
+
   /// File path: assets/svgs/wallet.svg
   String get wallet => 'assets/svgs/wallet.svg';
 
@@ -405,6 +414,9 @@ class $AssetsSvgsGen {
         messageActive,
         profile,
         profileActive,
+        scrollCard,
+        search,
+        searchSetttings,
         wallet,
         walletActive,
         welcomeTag
