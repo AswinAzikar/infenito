@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Cappuccino",
+    "image": "Assets.pngs.capuccino.path",
+    "price": "$4.99",
+    "type": "Espresso, Steamed milk",
+    "rating": 4.5,
+    "numberOfRatings": 150
+  },
+  {
+    "name": "Latte",
+    "image": "Assets.pngs.coffee211.path",
+    "price": "$4.49",
+    "type": "Espresso, Steamed milk",
+    "rating": 4.7,
+    "numberOfRatings": 200
+  },
+  {
+    "name": "Espresso",
+    "image": "Assets.pngs.capuccino.path",
+    "price": "$3.00",
+    "type": "Coffee",
+    "rating": 4.8,
+    "numberOfRatings": 120
+  },
+  {
+    "name": "Green Tea",
+    "image": "Assets.pngs.coffee211.path",
+    "price": "$2.50",
+    "type": "Tea",
+    "rating": 4.0,
+    "numberOfRatings": 80
+  },
+  {
+    "name": "Black Tea",
+    "image": "Assets.pngs.capuccino.path",
+    "price": "$2.00",
+    "type": "Tea",
+    "rating": 4.2,
+    "numberOfRatings": 60
+  }
+]

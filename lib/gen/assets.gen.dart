@@ -9,6 +9,16 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsDataGen {
+  const $AssetsDataGen();
+
+  /// File path: assets/data/data.json
+  String get data => 'assets/data/data.json';
+
+  /// List of all assets
+  List<String> get values => [data];
+}
+
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
@@ -336,6 +346,14 @@ class $AssetsPngsGen {
   AssetGenImage get asset111 =>
       const AssetGenImage('assets/pngs/Asset 1 1(1).png');
 
+  /// File path: assets/pngs/Coffee2 1(1).png
+  AssetGenImage get coffee211 =>
+      const AssetGenImage('assets/pngs/Coffee2 1(1).png');
+
+  /// File path: assets/pngs/capuccino.png
+  AssetGenImage get capuccino =>
+      const AssetGenImage('assets/pngs/capuccino.png');
+
   /// File path: assets/pngs/signup_bg.png
   AssetGenImage get signupBg =>
       const AssetGenImage('assets/pngs/signup_bg.png');
@@ -344,11 +362,18 @@ class $AssetsPngsGen {
   AssetGenImage get waveHand => const AssetGenImage('assets/pngs/waveHand.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [asset111, signupBg, waveHand];
+  List<AssetGenImage> get values =>
+      [asset111, coffee211, capuccino, signupBg, waveHand];
 }
 
 class $AssetsSvgsGen {
   const $AssetsSvgsGen();
+
+  /// File path: assets/svgs/add_button_green.svg
+  String get addButtonGreen => 'assets/svgs/add_button_green.svg';
+
+  /// File path: assets/svgs/curve.svg
+  String get curve => 'assets/svgs/curve.svg';
 
   /// File path: assets/svgs/delete.svg
   String get delete => 'assets/svgs/delete.svg';
@@ -392,6 +417,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/search_setttings.svg
   String get searchSetttings => 'assets/svgs/search_setttings.svg';
 
+  /// File path: assets/svgs/star.svg
+  String get star => 'assets/svgs/star.svg';
+
   /// File path: assets/svgs/wallet.svg
   String get wallet => 'assets/svgs/wallet.svg';
 
@@ -403,6 +431,8 @@ class $AssetsSvgsGen {
 
   /// List of all assets
   List<String> get values => [
+        addButtonGreen,
+        curve,
         delete,
         deleteActive,
         deleteIcon,
@@ -417,6 +447,7 @@ class $AssetsSvgsGen {
         scrollCard,
         search,
         searchSetttings,
+        star,
         wallet,
         walletActive,
         welcomeTag
@@ -426,6 +457,7 @@ class $AssetsSvgsGen {
 class Assets {
   Assets._();
 
+  static const $AssetsDataGen data = $AssetsDataGen();
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsJpegsGen jpegs = $AssetsJpegsGen();
   static const $AssetsPngsGen pngs = $AssetsPngsGen();
