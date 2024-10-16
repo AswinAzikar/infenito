@@ -319,6 +319,16 @@ class $AssetsFontsGen {
       ];
 }
 
+class $AssetsJpegsGen {
+  const $AssetsJpegsGen();
+
+  /// File path: assets/jpegs/user.jpeg
+  AssetGenImage get user => const AssetGenImage('assets/jpegs/user.jpeg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [user];
+}
+
 class $AssetsPngsGen {
   const $AssetsPngsGen();
 
@@ -330,8 +340,11 @@ class $AssetsPngsGen {
   AssetGenImage get signupBg =>
       const AssetGenImage('assets/pngs/signup_bg.png');
 
+  /// File path: assets/pngs/waveHand.png
+  AssetGenImage get waveHand => const AssetGenImage('assets/pngs/waveHand.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [asset111, signupBg];
+  List<AssetGenImage> get values => [asset111, signupBg, waveHand];
 }
 
 class $AssetsSvgsGen {
@@ -342,6 +355,12 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/delete_active.svg
   String get deleteActive => 'assets/svgs/delete_active.svg';
+
+  /// File path: assets/svgs/delete_icon.svg
+  String get deleteIcon => 'assets/svgs/delete_icon.svg';
+
+  /// File path: assets/svgs/grainy.svg
+  String get grainy => 'assets/svgs/grainy.svg';
 
   /// File path: assets/svgs/home.svg
   String get home => 'assets/svgs/home.svg';
@@ -377,6 +396,8 @@ class $AssetsSvgsGen {
   List<String> get values => [
         delete,
         deleteActive,
+        deleteIcon,
+        grainy,
         home,
         homeActive,
         linearCoffeeGradient,
@@ -394,6 +415,7 @@ class Assets {
   Assets._();
 
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
+  static const $AssetsJpegsGen jpegs = $AssetsJpegsGen();
   static const $AssetsPngsGen pngs = $AssetsPngsGen();
   static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
 }

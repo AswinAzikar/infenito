@@ -1,10 +1,15 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infenito/Utils/size_utils.dart';
 import 'package:infenito/constants/constants.dart';
 import 'package:infenito/gen/assets.gen.dart';
+import 'package:infenito/themes/app_text_style.dart';
+import 'package:infenito/themes/themes.dart';
+import 'package:infenito/views/home_screen.dart';
+import 'package:infenito/widgets/glass_morphic_container.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
@@ -32,11 +37,16 @@ class _NavigationScreenState extends State<NavigationScreen> {
   ];
 
   final List<Widget> _pages = [
-    const Center(child: Text("Home Page")),
-    const Center(child: Text("Profile Page")),
-    const Center(child: Text("Wallet Page")),
-    const Center(child: Text("delete Page")),
-    const Center(child: Text("Notification Page"))
+    const HomeScreen(),
+    const Center(
+        child: Text("Profile Screen", style: TextStyle(color: Colors.white))),
+    const Center(
+        child: Text("Wallet Screen", style: TextStyle(color: Colors.white))),
+    const Center(
+        child: Text("delete Screen", style: TextStyle(color: Colors.white))),
+    const Center(
+        child:
+            Text("Notification Screen", style: TextStyle(color: Colors.white)))
   ];
 
   void _onItemTapped(int index) {
@@ -47,46 +57,82 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        extendBody: true,
-        backgroundColor: Colors.brown[100],
-        body: _pages[_selectedIndex],
-        appBar: AppBar(),
-        bottomNavigationBar: Container(
-          height: SizeUtils.width * .16,
-          margin: EdgeInsets.fromLTRB(
-              SizeUtils.width * .03,
-              SizeUtils.width * .05,
-              SizeUtils.width * .03,
-              SizeUtils.width * .05),
-          decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.5),
-            borderRadius: const BorderRadius.all(Radius.circular(paddingLarge)),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 8,
-                spreadRadius: 2,
-              ),
-            ],
+    return Scaffold(
+      extendBody: true,
+      //  backgroundColor: Colors.brown[100],
+      body: Stack(
+        children: [
+          SizedBox(
+            height: SizeUtils.height,
+            child: Image.asset(
+              Assets.pngs.signupBg.path,
+              fit: BoxFit.fitHeight,
+            ),
           ),
-          child: ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(paddingLarge)),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.4),
-                  borderRadius:
-                      const BorderRadius.all(Radius.circular(paddingLarge)),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: List.generate(_inactiveIcons.length, (index) {
-                    return _buildNavItem(index);
-                  }),
-                ),
+          SizedBox(
+            height: SizeUtils.height,
+            child: SvgPicture.asset(
+              Assets.svgs.linearCoffeeGradient,
+              fit: BoxFit.cover,
+            ),
+          ),
+          GlassmorphicContainer(
+              borderColor: Colors.transparent,
+              backgroundColorOpacity: .45,
+              backgroundColor: const Color(0xff313131),
+              borderThickness: 0,
+              child: SizedBox(
+                height: SizeUtils.height,
+                width: SizeUtils.width,
+              )),
+          SizedBox(
+            child: SvgPicture.asset(
+              height: SizeUtils.height,
+              Assets.svgs.grainy,
+              fit: BoxFit.fill,
+            ),
+          ),
+          _pages[_selectedIndex],
+        ],
+      ),
+      //     appBar: AppBar(),
+      bottomNavigationBar: Container(
+        height: SizeUtils.width * .16,
+        margin: EdgeInsets.fromLTRB(
+            SizeUtils.width * .04,
+            SizeUtils.width * .05,
+            SizeUtils.width * .04,
+            SizeUtils.width * .05),
+        decoration: BoxDecoration(
+          color: const Color(0xff333333).withOpacity(0.3),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(
+              paddingLarge,
+            ),
+          ),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 8,
+              spreadRadius: 2,
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(paddingLarge)),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: Container(
+              decoration: BoxDecoration(
+                color: const Color(0xff333333).withOpacity(.4),
+                borderRadius:
+                    const BorderRadius.all(Radius.circular(paddingLarge)),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: List.generate(_inactiveIcons.length, (index) {
+                  return _buildNavItem(index);
+                }),
               ),
             ),
           ),

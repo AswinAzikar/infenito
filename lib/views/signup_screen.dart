@@ -41,6 +41,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
               fit: BoxFit.cover,
             ),
           ),
+          SizedBox(
+            child: SvgPicture.asset(
+              height: SizeUtils.height,
+              Assets.svgs.grainy,
+              fit: BoxFit.fill,
+            ),
+          ),
           Positioned(
             top: SizeUtils.height * 0.05,
             right: 0,
