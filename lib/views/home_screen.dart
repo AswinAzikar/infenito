@@ -336,7 +336,37 @@ class _HomeScreenState extends State<HomeScreen> {
                       Gap(SizeUtils.width * 0.1),
                     ],
                   ),
-                  Gap(SizeUtils.width * 0.03.h),
+                  Gap(SizeUtils.width * 0.02.h),
+                  GlassmorphicContainer(
+                    containerPadding: const EdgeInsets.all(padding),
+                    backgroundColor: const Color(0xff4c4649),
+                    backgroundColorOpacity: 0.6,
+                    borderRadius: 0,
+                    borderColor: Colors.transparent,
+                    borderThickness: 0,
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Get it instantly",
+                              style: context.inter50016
+                                  .copyWith(fontSize: 18, color: textColor),
+                            )
+                          ],
+                        ),
+                        const Column(
+                          children: [
+                            GlassmorphicContainer(
+                              borderColor: Colors.transparent,
+                              borderRadius: paddingLarge,
+                              borderThickness: 0,
+                              )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               )
             ],

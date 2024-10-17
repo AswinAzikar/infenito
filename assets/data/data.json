@@ -5,7 +5,10 @@
     "price": "$4.99",
     "type": "Espresso, Steamed milk",
     "rating": 4.5,
-    "numberOfRatings": 150
+    "numberOfRatings": 150,
+    "ingredientType": "veg",
+    "description": "A classic Italian coffee drink with rich, bold espresso topped with a thick layer of steamed milk.",
+    "instantAvailability": true
   },
   {
     "name": "Latte",
@@ -13,30 +16,152 @@
     "price": "$4.49",
     "type": "Espresso, Steamed milk",
     "rating": 4.7,
-    "numberOfRatings": 200
+    "numberOfRatings": 200,
+    "ingredientType": "veg",
+    "description": "A smooth and creamy coffee drink with steamed milk and a light layer of foam.",
+    "instantAvailability": true
   },
   {
     "name": "Espresso",
-    "image": "Assets.pngs.capuccino.path",
+    "image": "Assets.pngs.espresso.path",
     "price": "$3.00",
     "type": "Coffee",
     "rating": 4.8,
-    "numberOfRatings": 120
+    "numberOfRatings": 120,
+    "ingredientType": "veg",
+    "description": "A rich, dark, and concentrated coffee made from finely ground coffee beans.",
+    "instantAvailability": true
   },
   {
     "name": "Green Tea",
-    "image": "Assets.pngs.coffee211.path",
+    "image": "Assets.pngs.greentea.path",
     "price": "$2.50",
     "type": "Tea",
     "rating": 4.0,
-    "numberOfRatings": 80
+    "numberOfRatings": 80,
+    "ingredientType": "veg",
+    "description": "A refreshing tea made from unoxidized green tea leaves, known for its light flavor and health benefits.",
+    "instantAvailability": true
   },
   {
     "name": "Black Tea",
-    "image": "Assets.pngs.capuccino.path",
+    "image": "Assets.pngs.blacktea.path",
     "price": "$2.00",
     "type": "Tea",
     "rating": 4.2,
-    "numberOfRatings": 60
+    "numberOfRatings": 60,
+    "ingredientType": "veg",
+    "description": "A full-bodied tea made from oxidized black tea leaves, perfect for those who enjoy bold flavors.",
+    "instantAvailability": true
+  },
+  {
+    "name": "Mocha",
+    "image": "Assets.pngs.mocha.path",
+    "price": "$5.25",
+    "type": "Espresso, Chocolate, Steamed milk",
+    "rating": 4.6,
+    "numberOfRatings": 175,
+    "ingredientType": "veg",
+    "description": "A decadent combination of espresso, chocolate, and steamed milk, perfect for those with a sweet tooth.",
+    "instantAvailability": true
+  },
+  {
+    "name": "Americano",
+    "image": "Assets.pngs.americano.path",
+    "price": "$3.50",
+    "type": "Espresso, Water",
+    "rating": 4.3,
+    "numberOfRatings": 130,
+    "ingredientType": "veg",
+    "description": "A simple yet bold coffee made by diluting espresso with hot water.",
+    "instantAvailability": true
+  },
+  {
+    "name": "Chai Latte",
+    "image": "Assets.pngs.chailatte.path",
+    "price": "$4.75",
+    "type": "Tea, Milk, Spices",
+    "rating": 4.4,
+    "numberOfRatings": 110,
+    "ingredientType": "veg",
+    "description": "A spiced tea beverage mixed with steamed milk, offering a warm and comforting flavor.",
+    "instantAvailability": false
+  },
+  {
+    "name": "Iced Coffee",
+    "image": "Assets.pngs.icedcoffee.path",
+    "price": "$3.99",
+    "type": "Coffee, Ice",
+    "rating": 4.5,
+    "numberOfRatings": 90,
+    "ingredientType": "veg",
+    "description": "A refreshing cold coffee drink brewed over ice, perfect for a hot day.",
+    "instantAvailability": true
+  },
+  {
+    "name": "Frappuccino",
+    "image": "Assets.pngs.frappuccino.path",
+    "price": "$5.99",
+    "type": "Coffee, Milk, Ice, Syrup",
+    "rating": 4.7,
+    "numberOfRatings": 160,
+    "ingredientType": "veg",
+    "description": "A blended coffee drink with milk, ice, and syrup, topped with whipped cream for extra indulgence.",
+    "instantAvailability": false
+  },
+  {
+    "name": "Hot Chocolate",
+    "image": "Assets.pngs.hotchocolate.path",
+    "price": "$4.25",
+    "type": "Chocolate, Steamed milk",
+    "rating": 4.6,
+    "numberOfRatings": 140,
+    "ingredientType": "veg",
+    "description": "A rich and creamy hot drink made with steamed milk and melted chocolate, perfect for cold days.",
+    "instantAvailability": true
+  },
+  {
+    "name": "Herbal Tea",
+    "image": "Assets.pngs.herbaltea.path",
+    "price": "$2.75",
+    "type": "Herbs, Spices",
+    "rating": 4.1,
+    "numberOfRatings": 65,
+    "ingredientType": "veg",
+    "description": "A calming tea made from a blend of herbs and spices, offering a soothing and aromatic experience.",
+    "instantAvailability": true
+  },
+  {
+    "name": "Matcha Latte",
+    "image": "Assets.pngs.matchalatte.path",
+    "price": "$5.50",
+    "type": "Matcha, Steamed milk",
+    "rating": 4.8,
+    "numberOfRatings": 180,
+    "ingredientType": "veg",
+    "description": "A vibrant green tea latte made with finely ground matcha and steamed milk, offering a smooth and earthy flavor.",
+    "instantAvailability": false
+  },
+  {
+    "name": "Eggnog Latte",
+    "image": "Assets.pngs.eggnog.path",
+    "price": "$5.75",
+    "type": "Espresso, Eggnog, Steamed milk",
+    "rating": 4.9,
+    "numberOfRatings": 100,
+    "ingredientType": "egg",
+    "description": "A festive latte made with rich eggnog, steamed milk, and a shot of espresso, perfect for the holiday season.",
+    "instantAvailability": true
+  },
+  {
+    "name": "Chicken Soup",
+    "image": "Assets.pngs.chickensoup.path",
+    "price": "$6.50",
+    "type": "Chicken, Vegetables, Broth",
+    "rating": 4.8,
+    "numberOfRatings": 85,
+    "ingredientType": "non-veg",
+    "description": "A warm, hearty chicken soup made with tender chicken, fresh vegetables, and a flavorful broth.",
+    "instantAvailability": false
   }
 ]

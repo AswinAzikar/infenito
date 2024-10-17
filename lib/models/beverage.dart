@@ -4,7 +4,10 @@ class Beverage {
   final String price;
   final String type;
   final double rating;
-  final int numberOfRatings; 
+  final int numberOfRatings;
+  final String ingredientType;
+  final String description;
+  final bool instantAvailability;
 
   Beverage({
     required this.name,
@@ -12,7 +15,10 @@ class Beverage {
     required this.price,
     required this.type,
     required this.rating,
-    required this.numberOfRatings, 
+    required this.numberOfRatings,
+    required this.ingredientType,
+    required this.description,
+    required this.instantAvailability,
   });
 
   factory Beverage.fromJson(Map<String, dynamic> json) {
@@ -22,7 +28,10 @@ class Beverage {
       price: json['price'],
       type: json['type'],
       rating: (json['rating'] as num).toDouble(),
-      numberOfRatings: json['numberOfRatings'] as int, 
+      numberOfRatings: json['numberOfRatings'] as int,
+      ingredientType: json['ingredientType'],
+      description: json['description'],
+      instantAvailability: json['instantAvailability'] as bool,
     );
   }
 
@@ -33,7 +42,10 @@ class Beverage {
       'price': price,
       'type': type,
       'rating': rating,
-      'numberOfRatings': numberOfRatings, 
+      'numberOfRatings': numberOfRatings,
+      'ingredientType': ingredientType,
+      'description': description,
+      'instantAvailability': instantAvailability,
     };
   }
 }
