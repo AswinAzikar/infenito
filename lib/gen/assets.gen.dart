@@ -384,6 +384,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/delete_icon.svg
   String get deleteIcon => 'assets/svgs/delete_icon.svg';
 
+  /// File path: assets/svgs/eggerian.svg
+  String get eggerian => 'assets/svgs/eggerian.svg';
+
   /// File path: assets/svgs/grainy.svg
   String get grainy => 'assets/svgs/grainy.svg';
 
@@ -401,6 +404,9 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/message_active.svg
   String get messageActive => 'assets/svgs/message_active.svg';
+
+  /// File path: assets/svgs/non_veg.svg
+  String get nonVeg => 'assets/svgs/non_veg.svg';
 
   /// File path: assets/svgs/profile.svg
   String get profile => 'assets/svgs/profile.svg';
@@ -420,6 +426,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/star.svg
   String get star => 'assets/svgs/star.svg';
 
+  /// File path: assets/svgs/veg.svg
+  String get veg => 'assets/svgs/veg.svg';
+
   /// File path: assets/svgs/wallet.svg
   String get wallet => 'assets/svgs/wallet.svg';
 
@@ -436,18 +445,21 @@ class $AssetsSvgsGen {
         delete,
         deleteActive,
         deleteIcon,
+        eggerian,
         grainy,
         home,
         homeActive,
         linearCoffeeGradient,
         message,
         messageActive,
+        nonVeg,
         profile,
         profileActive,
         scrollCard,
         search,
         searchSetttings,
         star,
+        veg,
         wallet,
         walletActive,
         welcomeTag
