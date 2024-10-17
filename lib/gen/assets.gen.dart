@@ -376,11 +376,17 @@ class $AssetsPngsGen {
 class $AssetsSvgsGen {
   const $AssetsSvgsGen();
 
+  /// File path: assets/svgs/addButton_text.svg
+  String get addButtonText => 'assets/svgs/addButton_text.svg';
+
   /// File path: assets/svgs/add_button_green.svg
   String get addButtonGreen => 'assets/svgs/add_button_green.svg';
 
   /// File path: assets/svgs/curve.svg
   String get curve => 'assets/svgs/curve.svg';
+
+  /// File path: assets/svgs/dark_shade.svg
+  String get darkShade => 'assets/svgs/dark_shade.svg';
 
   /// File path: assets/svgs/delete.svg
   String get delete => 'assets/svgs/delete.svg';
@@ -447,8 +453,10 @@ class $AssetsSvgsGen {
 
   /// List of all assets
   List<String> get values => [
+        addButtonText,
         addButtonGreen,
         curve,
+        darkShade,
         delete,
         deleteActive,
         deleteIcon,

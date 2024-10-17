@@ -151,21 +151,27 @@ class ScrollCardTiles extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal: SizeUtils.width * 0.1),
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: paddingSmall),
-                                decoration: BoxDecoration(
-                                    color: buttonGreen,
-                                    borderRadius: BorderRadius.circular(5)),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Add",
-                                      style: context.inter40014.copyWith(
-                                          fontSize: 12, color: Colors.white),
-                                    ),
-                                  ],
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(context, '/detailScreen',
+                                      arguments: instantBeverage);
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: paddingSmall),
+                                  decoration: BoxDecoration(
+                                      color: buttonGreen,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Add",
+                                        style: context.inter40014.copyWith(
+                                            fontSize: 12, color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

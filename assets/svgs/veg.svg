@@ -15,5 +15,5 @@
     stroke-width="2"
   />
   <!-- Dot -->
-  <circle cx="50" cy="50" r="10" fill="green" />
+  <circle cx="50" cy="50" r="20" fill="green" />
 </svg>

@@ -325,7 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                           onTap: () {
                                                             Navigator.pushNamed(
                                                                 context,
-                                                                '/detailScreen');
+                                                                '/detailScreen',arguments: beverage);
                                                           },
                                                           child: SvgPicture
                                                               .asset(Assets.svgs
