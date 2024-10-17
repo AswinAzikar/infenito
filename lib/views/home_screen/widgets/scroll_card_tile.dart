@@ -143,9 +143,7 @@ class ScrollCardTiles extends StatelessWidget {
                             ),
                           ),
                         ),
-                        InkWell(
-//ToDo.....
-                          //   onTap: Navigator.pushNamed(context,''),
+                        Expanded(
                           child: Positioned(
                             bottom: 0,
                             left: 0,
