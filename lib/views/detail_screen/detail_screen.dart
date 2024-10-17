@@ -1,13 +1,11 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 import 'package:infenito/Utils/size_utils.dart';
 import 'package:infenito/constants/constants.dart';
 import 'package:infenito/gen/assets.gen.dart';
 import 'package:infenito/models/beverage.dart';
 import 'package:infenito/themes/app_text_style.dart';
-import 'package:infenito/views/signup_screen.dart';
 import 'package:infenito/widgets/glass_morphic_container.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -18,6 +16,10 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
+  List<int> list = List.generate(20, (index) => index + 1);
+
+  int dropdownValue = 1;
+
   @override
   void initState() {
     super.initState();
@@ -30,66 +32,143 @@ class _DetailScreenState extends State<DetailScreen> {
 
   void _showBottomSheet(BuildContext context, Beverage beverage) {
     showModalBottomSheet(
-        backgroundColor: Colors.transparent,
-        context: context,
-        builder: (BuildContext context) => GlassmorphicContainer(
-            //    containerPadding: const EdgeInsets.all(padding),
-            borderColor: Colors.grey,
-            borderRadius: 30,
-            backgroundColor: const Color(0xff525253),
-            backgroundColorOpacity: 0.6,
-            child: Padding(
-              padding: const EdgeInsets.all(paddingLarge),
-              child: Column(
+      isDismissible: false,
+      enableDrag: false,
+      backgroundColor: Colors.transparent,
+      context: context,
+      builder: (BuildContext context) => GlassmorphicContainer(
+        borderColor: const Color(0xff777878),
+        borderRadius: 30,
+        backgroundColor: const Color(0xff525253),
+        backgroundColorOpacity: 0.8,
+        child: Padding(
+          padding: const EdgeInsets.all(paddingLarge * 1.5),
+          child: Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(
+                    beverage.name,
+                    style: context.inter60018.copyWith(color: textColor),
+                  ),
                   Row(
                     children: [
-                      Column(
-                        children: [
-                          Text(
-                            beverage.name,
-                            style:
-                                context.inter60018.copyWith(color: textColor),
-                          )
-                        ],
+                      Text(
+                        beverage.rating.toString(),
+                        style: context.inter40014.copyWith(
+                          fontWeight: FontWeight.w300,
+                          color: const Color(0xffc4c4c4),
+                        ),
                       ),
-                      const Column()
+                      Gap(SizeUtils.width * 0.02),
+                      SvgPicture.asset(Assets.svgs.star),
+                      Gap(SizeUtils.width * 0.02),
+                      Text(
+                        "(${beverage.numberOfRatings})",
+                        style: context.inter40014.copyWith(
+                          fontWeight: FontWeight.w300,
+                          color: const Color(0xffc4c4c4),
+                        ),
+                      ),
+                      Gap(SizeUtils.width * 0.03),
+                      Builder(
+                        builder: (context) {
+                          if (beverage.ingredientType == "veg") {
+                            return SvgPicture.asset(
+                              Assets.svgs.veg,
+                              height: 25.h,
+                            );
+                          } else if (beverage.ingredientType == "egg") {
+                            return SvgPicture.asset(
+                              Assets.svgs.eggerian,
+                              height: 25.h,
+                            );
+                          } else {
+                            return SvgPicture.asset(
+                              Assets.svgs.nonVeg,
+                              height: 25.h,
+                            );
+                          }
+                        },
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
-            )));
+              const Spacer(),
+              Column(
+                children: [
+                  DropdownMenu<int>(
+                    menuHeight: SizeUtils.height * .5,
+                    width: SizeUtils.width * 0.2,
+                    inputDecorationTheme: const InputDecorationTheme(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(15))),
+                      outlineBorder: BorderSide(color: Colors.grey),
+                      filled: true,
+                      fillColor: Color.fromARGB(255, 224, 221, 221),
+                    ),
+                    trailingIcon: const Icon(
+                      Icons.arrow_drop_down,
+                    ),
+                    initialSelection: dropdownValue,
+                    onSelected: (int? value) {
+                      setState(() {
+                        dropdownValue = value!;
+                      });
+                    },
+                    dropdownMenuEntries:
+                        list.map<DropdownMenuEntry<int>>((int value) {
+                      return DropdownMenuEntry<int>(
+                        value: value,
+                        label: value.toString(),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final beverage = ModalRoute.of(context)!.settings.arguments as Beverage;
+
     return Scaffold(
-        body: Stack(
-      children: [
-        Image.asset(Assets.pngs.signupBg.path,
-            fit: BoxFit.cover, height: SizeUtils.height),
-        Container(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            AspectRatio(
-              aspectRatio: 456 / 549,
-              child: Image.asset(
-                Assets.jpegs.cappucino.path,
+      body: Stack(
+        children: [
+          Image.asset(
+            Assets.pngs.signupBg.path,
+            fit: BoxFit.cover,
+            height: SizeUtils.height,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              AspectRatio(
+                aspectRatio: 456 / 549,
+                child: Image.asset(
+                  Assets.jpegs.cappucino.path,
+                ),
               ),
-            ),
-          ],
-        )),
-        Positioned(
+            ],
+          ),
+          Positioned(
             top: 0,
             left: 0,
             right: 0,
             child: SvgPicture.asset(
               Assets.svgs.darkShade,
               width: SizeUtils.width,
-            )),
-      ],
-    ));
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
