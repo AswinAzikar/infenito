@@ -33,153 +33,152 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.transparent,
       body: GlassmorphicContainer(
-        backgroundColor: const Color(0xff313131).withOpacity(0.45),
+        //     backgroundColor: const Color(0xff313131).withOpacity(0.45),
         borderRadius: 0,
         borderColor: Colors.transparent,
         backgroundColorOpacity: 0.4,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              GlassmorphicContainer(
-                borderRadius: 0,
-                borderColor: Colors.transparent,
-                borderThickness: 0,
-                containerPadding: EdgeInsets.fromLTRB(
-                  SizeUtils.width * .04,
-                  SizeUtils.width * .08,
-                  SizeUtils.width * .04,
-                  0,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      child: Column(
-                        children: [
-                          Gap(SizeUtils.width * 0.04.h),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    Assets.pngs.waveHand.path,
-                                    width: 27.h,
-                                    height: 27.h,
-                                  ),
-                                  gap,
-                                  const Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "20/12/22",
-                                        style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.w300,
-                                          color: Color(0xffB6B6B6),
-                                        ),
-                                      ),
-                                      Text(
-                                        "Joshua Scalen",
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xffB6B6B6),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  InkWell(
-                                    child: Container(
-                                      padding:
-                                          const EdgeInsets.all(padding + 2),
-                                      height: 40.h,
-                                      width: 40.h,
-                                      decoration: const BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                        color: Color(0xffF9F9F9),
-                                      ),
-                                      child: SvgPicture.asset(
-                                        width: 8,
-                                        height: 5,
-                                        Assets.svgs.deleteIcon,
-                                        fit: BoxFit.contain,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GlassmorphicContainer(
+              borderRadius: 0,
+              borderColor: Colors.transparent,
+              borderThickness: 0,
+              containerPadding: EdgeInsets.fromLTRB(
+                SizeUtils.width * .04,
+                SizeUtils.width * .08,
+                SizeUtils.width * .04,
+                0,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  SizedBox(
+                    child: Column(
+                      children: [
+                        Gap(SizeUtils.width * 0.04.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset(
+                                  Assets.pngs.waveHand.path,
+                                  width: 27.h,
+                                  height: 27.h,
+                                ),
+                                gap,
+                                const Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "20/12/22",
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w300,
+                                        color: Color(0xffB6B6B6),
                                       ),
                                     ),
-                                  ),
-                                  gap,
-                                  CircularImageContainer(
-                                    imageUrl: Assets.jpegs.user.path,
-                                    radius: 23.h,
-                                    borderColor: const Color(0xff71AB7A),
-                                    borderWidth: 1,
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          Gap(SizeUtils.width * 0.07.h),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: TextFormField(
-                                  cursorColor: Colors.grey,
-                                  decoration: InputDecoration(
-                                    hintText: "Search favourite Beverages",
-                                    hintStyle: context.poppins40014.copyWith(
-                                        color: const Color(0xffBBBBBC),
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w300),
-                                    prefixIcon: Container(
-                                      padding: const EdgeInsets.all(10),
-                                      child:
-                                          SvgPicture.asset(Assets.svgs.search),
-                                    ),
-                                    suffixIcon: GestureDetector(
-                                      onTap: () {},
-                                      child: Container(
-                                        padding: const EdgeInsets.all(10),
-                                        child: SvgPicture.asset(
-                                            Assets.svgs.searchSetttings),
+                                    Text(
+                                      "Joshua Scalen",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffB6B6B6),
                                       ),
                                     ),
-                                    filled: true,
-                                    fillColor: Colors.white,
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide:
-                                          const BorderSide(color: Colors.white),
-                                      borderRadius: BorderRadius.circular(10),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                InkWell(
+                                  child: Container(
+                                    padding: const EdgeInsets.all(padding + 2),
+                                    height: 40.h,
+                                    width: 40.h,
+                                    decoration: const BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(10)),
+                                      color: Color(0xffF9F9F9),
                                     ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          color: Colors.transparent),
-                                      borderRadius: BorderRadius.circular(10),
+                                    child: SvgPicture.asset(
+                                      width: 8,
+                                      height: 5,
+                                      Assets.svgs.deleteIcon,
+                                      fit: BoxFit.contain,
                                     ),
                                   ),
                                 ),
+                                gap,
+                                CircularImageContainer(
+                                  imageUrl: Assets.jpegs.user.path,
+                                  radius: 23.h,
+                                  borderColor: const Color(0xff71AB7A),
+                                  borderWidth: 1,
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                        Gap(SizeUtils.width * 0.07.h),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: TextFormField(
+                                cursorColor: Colors.grey,
+                                decoration: InputDecoration(
+                                  hintText: "Search favourite Beverages",
+                                  hintStyle: context.poppins40014.copyWith(
+                                      color: const Color(0xffBBBBBC),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w300),
+                                  prefixIcon: Container(
+                                    padding: const EdgeInsets.all(10),
+                                    child: SvgPicture.asset(Assets.svgs.search),
+                                  ),
+                                  suffixIcon: GestureDetector(
+                                    onTap: () {},
+                                    child: Container(
+                                      padding: const EdgeInsets.all(10),
+                                      child: SvgPicture.asset(
+                                          Assets.svgs.searchSetttings),
+                                    ),
+                                  ),
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        const BorderSide(color: Colors.white),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: Colors.transparent),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
                               ),
-                            ],
-                          ),
-                          Gap(SizeUtils.width * 0.07.h),
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                        Gap(SizeUtils.width * 0.07.h),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Column(
-                children: [
-                  Column(
+            ),
+            Column(
+              children: [
+                Container(
+                  color: const Color(0xff444143),
+                  child: Column(
                     children: [
                       Gap(SizeUtils.width * 0.05),
                       Row(
@@ -227,6 +226,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: SizedBox(
                                           width: SizeUtils.width / 2,
                                           child: GlassmorphicContainer(
+                                            backgroundColorOpacity: 0.3,
                                             borderRadius: 7,
                                             borderThickness: 1,
                                             borderColor: Colors.grey.shade700,
@@ -255,12 +255,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 ),
                                                 Row(
                                                   children: [
-                                                    Text(
-                                                      beverage.name,
-                                                      style: context.inter60018
-                                                          .copyWith(
-                                                              color: const Color(
-                                                                  0xffCDCDCD)),
+                                                    SizedBox(
+                                                      width:
+                                                          SizeUtils.width / 3,
+                                                      child: Text(
+                                                        beverage.name,
+                                                        style: context
+                                                            .inter60018
+                                                            .copyWith(
+                                                                color: const Color(
+                                                                    0xffCDCDCD)),
+                                                      ),
                                                     )
                                                   ],
                                                 ),
@@ -275,12 +280,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                                           CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Text(
-                                                          beverage.type,
-                                                          style: context
-                                                              .inter40014
-                                                              .copyWith(
-                                                                  fontSize: 12),
+                                                        Row(
+                                                          children: [
+                                                            SizedBox(
+                                                              width: SizeUtils
+                                                                      .width /
+                                                                  3,
+                                                              child: Text(
+                                                                beverage.type,
+                                                                style: context
+                                                                    .inter40014
+                                                                    .copyWith(
+                                                                        fontSize:
+                                                                            12),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                         const Gap(paddingSmall),
                                                         Row(
@@ -336,41 +351,92 @@ class _HomeScreenState extends State<HomeScreen> {
                       Gap(SizeUtils.width * 0.1),
                     ],
                   ),
-                  Gap(SizeUtils.width * 0.02.h),
-                  GlassmorphicContainer(
-                    containerPadding: const EdgeInsets.all(padding),
-                    backgroundColor: const Color(0xff4c4649),
-                    backgroundColorOpacity: 0.6,
-                    borderRadius: 0,
-                    borderColor: Colors.transparent,
-                    borderThickness: 0,
-                    child: Column(
+                ),
+                Gap(SizeUtils.width * 0.02.h),
+                Column(
+                  children: [
+                    Row(
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Get it instantly",
-                              style: context.inter50016
-                                  .copyWith(fontSize: 18, color: textColor),
-                            )
-                          ],
-                        ),
-                        const Column(
-                          children: [
-                            GlassmorphicContainer(
-                              borderColor: Colors.transparent,
-                              borderRadius: paddingLarge,
-                              borderThickness: 0,
-                              )
-                          ],
+                        Text(
+                          "Get it instantly",
+                          style: context.inter50016
+                              .copyWith(fontSize: 18, color: textColor),
                         )
                       ],
                     ),
-                  ),
-                ],
-              )
-            ],
-          ),
+                    FutureBuilder<List<Beverage>>(
+                        future: loadBeverageData(),
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return const Center(
+                                child: CircularProgressIndicator());
+                          } else if (snapshot.hasError) {
+                            return Center(
+                                child: Text('Error:${snapshot.error}'));
+                          } else if (snapshot.hasData) {
+                            final beverages = snapshot.data!;
+
+                            return SizedBox(
+                              height: SizeUtils.width * 0.74,
+                              width: double.maxFinite,
+                              child: Expanded(
+                                child: ListView.builder(
+                                  scrollDirection: Axis.vertical,
+                                  itemBuilder: (context, index) {
+                                    if (beverages[index].instantAvailability) {
+                                      final instantBeverage = beverages[index];
+
+                                      return SizedBox(
+                                        height: 100,
+                                        width: double.maxFinite,
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.all(padding),
+                                          child: GlassmorphicContainer(
+                                            backgroundColorOpacity: 1,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black.withOpacity(
+                                                    0.2), // Shadow color
+                                                blurRadius:
+                                                    30, // Softness of the shadow
+                                                offset: const Offset(0,
+                                                    10), // Vertical movement of shadow
+                                                spreadRadius:
+                                                    5, // How much the shadow spreads
+                                              ),
+                                            ],
+                                            backgroundColor:
+                                                const Color(0xff736e70),
+                                            borderColor: Colors.transparent,
+                                            borderThickness: 0,
+                                            child: const Row(
+                                              children: [
+                                                Column(
+                                                  children: [],
+                                                ),
+                                                Column(),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                            );
+                          }
+
+                          return const SizedBox();
+                        })
+                  ],
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );

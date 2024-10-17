@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -9,6 +8,7 @@ import 'package:infenito/constants/constants.dart';
 import 'package:infenito/gen/assets.gen.dart';
 
 class GlassmorphicContainer extends StatelessWidget {
+  final List<BoxShadow> boxShadow;
   final bool enableNoise;
   final double borderRadius;
   final Color borderColor;
@@ -20,11 +20,12 @@ class GlassmorphicContainer extends StatelessWidget {
   final EdgeInsets containerPadding;
   const GlassmorphicContainer(
       {super.key,
+      this.boxShadow = const [],
       this.borderRadius = paddingLarge / 2,
       this.borderColor = Colors.white,
       this.enableLeftCornerBorder = false,
       this.borderThickness = 1,
-      this.backgroundColor = const Color.fromARGB(255, 211, 192, 192),
+      this.backgroundColor = const Color(0xff7c7c7e),
       this.backgroundColorOpacity = 0.1,
       this.enableNoise = false,
       this.child,
@@ -38,6 +39,7 @@ class GlassmorphicContainer extends StatelessWidget {
         Container(
           padding: containerPadding,
           decoration: BoxDecoration(
+            boxShadow: boxShadow,
             color: backgroundColor.withOpacity(backgroundColorOpacity),
             borderRadius: BorderRadius.circular(borderRadius),
             border: enableLeftCornerBorder
