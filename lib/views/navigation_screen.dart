@@ -8,7 +8,7 @@ import 'package:infenito/constants/constants.dart';
 import 'package:infenito/gen/assets.gen.dart';
 import 'package:infenito/themes/app_text_style.dart';
 import 'package:infenito/themes/themes.dart';
-import 'package:infenito/views/home_screen.dart';
+import 'package:infenito/views/home_screen/home_screen.dart';
 import 'package:infenito/widgets/glass_morphic_container.dart';
 
 class NavigationScreen extends StatefulWidget {

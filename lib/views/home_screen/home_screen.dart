@@ -9,6 +9,7 @@ import 'package:infenito/constants/constants.dart';
 import 'package:infenito/gen/assets.gen.dart';
 import 'package:infenito/models/beverage.dart';
 import 'package:infenito/themes/app_text_style.dart';
+import 'package:infenito/views/home_screen/widgets/scroll_card_tile.dart';
 import 'package:infenito/widgets/circular_image_container.dart';
 import 'package:infenito/widgets/glass_morphic_container.dart';
 
@@ -37,7 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.transparent,
       body: GlassmorphicContainer(
-        //     backgroundColor: const Color(0xff313131).withOpacity(0.45),
         borderRadius: 0,
         borderColor: Colors.transparent,
         backgroundColorOpacity: 0.4,
@@ -226,9 +226,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: SizedBox(
                                           width: SizeUtils.width / 2,
                                           child: GlassmorphicContainer(
+                                            backgroundColor:
+                                                const Color.fromARGB(
+                                                    255, 204, 199, 199),
                                             backgroundColorOpacity: 0.3,
                                             borderRadius: 7,
-                                            borderThickness: 1,
+                                            borderThickness: 0,
                                             borderColor: Colors.grey.shade700,
                                             containerPadding:
                                                 EdgeInsets.all(paddingLarge.h),
@@ -387,41 +390,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     if (beverages[index].instantAvailability) {
                                       final instantBeverage = beverages[index];
 
-                                      return SizedBox(
-                                        height: 100,
-                                        width: double.maxFinite,
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.all(padding),
-                                          child: GlassmorphicContainer(
-                                            backgroundColorOpacity: 1,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.black.withOpacity(
-                                                    0.2), // Shadow color
-                                                blurRadius:
-                                                    30, // Softness of the shadow
-                                                offset: const Offset(0,
-                                                    10), // Vertical movement of shadow
-                                                spreadRadius:
-                                                    5, // How much the shadow spreads
-                                              ),
-                                            ],
-                                            backgroundColor:
-                                                const Color(0xff736e70),
-                                            borderColor: Colors.transparent,
-                                            borderThickness: 0,
-                                            child: const Row(
-                                              children: [
-                                                Column(
-                                                  children: [],
-                                                ),
-                                                Column(),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      );
+                                      return ScrollCardTiles(instantBeverage: instantBeverage);
                                     }
                                     return null;
                                   },
