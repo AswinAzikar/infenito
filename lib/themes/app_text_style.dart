@@ -1,26 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:infenito/Utils/size_utils.dart';
+import 'package:infenito/views/signup_screen.dart';
 
 class AppTextStyles {
-  static const String poppinsFontFamily = "Poppins";
-  static const String interFontFamily = "Inter";
+  static String poppinsFontFamily = "Poppins";
+  static String interFontFamily = "Inter";
 
-  static TextStyle poppins40014 = const TextStyle(
-      fontFamily: poppinsFontFamily, fontWeight: FontWeight.w400, fontSize: 14);
-  static TextStyle poppins50016 = const TextStyle(
-      fontFamily: poppinsFontFamily, fontWeight: FontWeight.w500, fontSize: 16);
-  static TextStyle poppins60018 = const TextStyle(
-      fontFamily: poppinsFontFamily, fontWeight: FontWeight.w600, fontSize: 18);
-  static TextStyle poppins70024 = const TextStyle(
-      fontFamily: poppinsFontFamily, fontWeight: FontWeight.w700, fontSize: 24);
+  static TextStyle poppins40014 = TextStyle(
+      fontFamily: poppinsFontFamily,
+      fontWeight: FontWeight.w400,
+      fontSize: 14.fSize);
+  static TextStyle poppins50016 = TextStyle(
+      fontFamily: poppinsFontFamily,
+      fontWeight: FontWeight.w500,
+      fontSize: 16.fSize);
+  static TextStyle poppins60018 = TextStyle(
+      fontFamily: poppinsFontFamily,
+      fontWeight: FontWeight.w600,
+      fontSize: 18.fSize);
+  static TextStyle poppins70024 = TextStyle(
+      fontFamily: poppinsFontFamily,
+      fontWeight: FontWeight.w700,
+      fontSize: 24.fSize);
 
-  static TextStyle inter40014 = const TextStyle(
-      fontFamily: interFontFamily, fontWeight: FontWeight.w400, fontSize: 14);
-  static TextStyle inter50016 = const TextStyle(
-      fontFamily: interFontFamily, fontWeight: FontWeight.w500, fontSize: 16);
-  static TextStyle inter60018 = const TextStyle(
-      fontFamily: interFontFamily, fontWeight: FontWeight.w600, fontSize: 18);
-  static TextStyle inter70024 = const TextStyle(
-      fontFamily: interFontFamily, fontWeight: FontWeight.w700, fontSize: 24);
+  static TextStyle inter40014 = TextStyle(
+      fontFamily: interFontFamily,
+      fontWeight: FontWeight.w400,
+      fontSize: 14.fSize);
+  static TextStyle inter50016 = TextStyle(
+      fontFamily: interFontFamily,
+      fontWeight: FontWeight.w500,
+      fontSize: 16.fSize);
+  static TextStyle inter60018 = TextStyle(
+      fontFamily: interFontFamily,
+      fontWeight: FontWeight.w600,
+      fontSize: 18.fSize);
+  static TextStyle inter70024 = TextStyle(
+      fontFamily: interFontFamily,
+      fontWeight: FontWeight.w700,
+      fontSize: 24.fSize);
 }
 
 extension TextStyleExtensions on BuildContext {
@@ -34,4 +52,3 @@ extension TextStyleExtensions on BuildContext {
   TextStyle get inter60018 => AppTextStyles.inter60018;
   TextStyle get inter70024 => AppTextStyles.inter70024;
 }
-

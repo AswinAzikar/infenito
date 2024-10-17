@@ -22,11 +22,14 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int _selectedIndex = 0;
 
   final List<SvgPicture> _inactiveIcons = [
-    SvgPicture.asset(Assets.svgs.home),
-    SvgPicture.asset(Assets.svgs.profile),
-    SvgPicture.asset(Assets.svgs.wallet),
-    SvgPicture.asset(Assets.svgs.delete),
-    SvgPicture.asset(Assets.svgs.message)
+    SvgPicture.asset(
+      Assets.svgs.home,
+      height: 20,
+    ),
+    SvgPicture.asset(Assets.svgs.profile, height: 20),
+    SvgPicture.asset(Assets.svgs.wallet, height: 20),
+    SvgPicture.asset(Assets.svgs.delete, height: 20),
+    SvgPicture.asset(Assets.svgs.message, height: 20)
   ];
   final List<SvgPicture> _activeIcons = [
     SvgPicture.asset(Assets.svgs.homeActive),

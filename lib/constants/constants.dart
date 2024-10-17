@@ -21,3 +21,5 @@ const buttonGradient = LinearGradient(colors: [
   Color(0xffA7745A),
 ]);
 Color textColor = const Color(0xffB6B6B6);
+
+Color buttonGreen = Color(0xff37AD54);

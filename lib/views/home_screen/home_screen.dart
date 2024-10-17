@@ -9,6 +9,7 @@ import 'package:infenito/constants/constants.dart';
 import 'package:infenito/gen/assets.gen.dart';
 import 'package:infenito/models/beverage.dart';
 import 'package:infenito/themes/app_text_style.dart';
+import 'package:infenito/views/detail_screen/detail_screen.dart';
 import 'package:infenito/views/home_screen/widgets/scroll_card_tile.dart';
 import 'package:infenito/widgets/circular_image_container.dart';
 import 'package:infenito/widgets/glass_morphic_container.dart';
@@ -321,7 +322,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     Column(
                                                       children: [
                                                         GestureDetector(
-                                                          onTap: () {},
+                                                          onTap: () {
+                                                            Navigator.pushNamed(
+                                                                context,
+                                                                '/detailScreen');
+                                                          },
                                                           child: SvgPicture
                                                               .asset(Assets.svgs
                                                                   .addButtonGreen),
@@ -390,7 +395,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     if (beverages[index].instantAvailability) {
                                       final instantBeverage = beverages[index];
 
-                                      return ScrollCardTiles(instantBeverage: instantBeverage);
+                                      return ScrollCardTiles(
+                                          instantBeverage: instantBeverage);
                                     }
                                     return null;
                                   },

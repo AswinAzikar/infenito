@@ -332,11 +332,18 @@ class $AssetsFontsGen {
 class $AssetsJpegsGen {
   const $AssetsJpegsGen();
 
+  /// File path: assets/jpegs/cappucino.jpg
+  AssetGenImage get cappucino =>
+      const AssetGenImage('assets/jpegs/cappucino.jpg');
+
+  /// File path: assets/jpegs/latte.jpg
+  AssetGenImage get latte => const AssetGenImage('assets/jpegs/latte.jpg');
+
   /// File path: assets/jpegs/user.jpeg
   AssetGenImage get user => const AssetGenImage('assets/jpegs/user.jpeg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [user];
+  List<AssetGenImage> get values => [cappucino, latte, user];
 }
 
 class $AssetsPngsGen {
