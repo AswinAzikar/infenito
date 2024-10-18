@@ -43,91 +43,121 @@ class _DetailScreenState extends State<DetailScreen> {
         backgroundColorOpacity: 0.8,
         child: Padding(
           padding: const EdgeInsets.all(paddingLarge * 1.5),
-          child: Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
                 children: [
-                  Text(
-                    beverage.name,
-                    style: context.inter60018.copyWith(color: textColor),
-                  ),
-                  Row(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        beverage.rating.toString(),
-                        style: context.inter40014.copyWith(
-                          fontWeight: FontWeight.w300,
-                          color: const Color(0xffc4c4c4),
-                        ),
+                        beverage.name,
+                        style: context.inter60018.copyWith(color: textColor),
                       ),
-                      Gap(SizeUtils.width * 0.02),
-                      SvgPicture.asset(Assets.svgs.star),
-                      Gap(SizeUtils.width * 0.02),
-                      Text(
-                        "(${beverage.numberOfRatings})",
-                        style: context.inter40014.copyWith(
-                          fontWeight: FontWeight.w300,
-                          color: const Color(0xffc4c4c4),
-                        ),
+                      Row(
+                        children: [
+                          Text(
+                            beverage.rating.toString(),
+                            style: context.inter40014.copyWith(
+                              fontWeight: FontWeight.w300,
+                              color: const Color(0xffc4c4c4),
+                            ),
+                          ),
+                          Gap(SizeUtils.width * 0.02),
+                          SvgPicture.asset(Assets.svgs.star),
+                          Gap(SizeUtils.width * 0.02),
+                          Text(
+                            "(${beverage.numberOfRatings})",
+                            style: context.inter40014.copyWith(
+                              fontWeight: FontWeight.w300,
+                              color: const Color(0xffc4c4c4),
+                            ),
+                          ),
+                          Gap(SizeUtils.width * 0.03),
+                          Builder(
+                            builder: (context) {
+                              if (beverage.ingredientType == "veg") {
+                                return SvgPicture.asset(
+                                  Assets.svgs.veg,
+                                  height: 25.h,
+                                );
+                              } else if (beverage.ingredientType == "egg") {
+                                return SvgPicture.asset(
+                                  Assets.svgs.eggerian,
+                                  height: 25.h,
+                                );
+                              } else {
+                                return SvgPicture.asset(
+                                  Assets.svgs.nonVeg,
+                                  height: 25.h,
+                                );
+                              }
+                            },
+                          ),
+                        ],
                       ),
-                      Gap(SizeUtils.width * 0.03),
-                      Builder(
-                        builder: (context) {
-                          if (beverage.ingredientType == "veg") {
-                            return SvgPicture.asset(
-                              Assets.svgs.veg,
-                              height: 25.h,
-                            );
-                          } else if (beverage.ingredientType == "egg") {
-                            return SvgPicture.asset(
-                              Assets.svgs.eggerian,
-                              height: 25.h,
-                            );
-                          } else {
-                            return SvgPicture.asset(
-                              Assets.svgs.nonVeg,
-                              height: 25.h,
-                            );
-                          }
+                    ],
+                  ),
+                  const Spacer(),
+                  Column(
+                    children: [
+                      DropdownMenu<int>(
+                        menuHeight: SizeUtils.height * .5,
+                        width: SizeUtils.width * 0.2,
+                        inputDecorationTheme: const InputDecorationTheme(
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15))),
+                          outlineBorder: BorderSide(color: Colors.grey),
+                          filled: true,
+                          fillColor: Color.fromARGB(255, 224, 221, 221),
+                        ),
+                        trailingIcon: const Icon(
+                          Icons.arrow_drop_down,
+                        ),
+                        initialSelection: dropdownValue,
+                        onSelected: (int? value) {
+                          setState(() {
+                            dropdownValue = value!;
+                          });
                         },
+                        dropdownMenuEntries:
+                            list.map<DropdownMenuEntry<int>>((int value) {
+                          return DropdownMenuEntry<int>(
+                            value: value,
+                            label: value.toString(),
+                          );
+                        }).toList(),
                       ),
                     ],
                   ),
                 ],
               ),
-              const Spacer(),
-              Column(
+              Gap(SizeUtils.width * 0.04),
+              Row(
                 children: [
-                  DropdownMenu<int>(
-                    menuHeight: SizeUtils.height * .5,
-                    width: SizeUtils.width * 0.2,
-                    inputDecorationTheme: const InputDecorationTheme(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(15))),
-                      outlineBorder: BorderSide(color: Colors.grey),
-                      filled: true,
-                      fillColor: Color.fromARGB(255, 224, 221, 221),
-                    ),
-                    trailingIcon: const Icon(
-                      Icons.arrow_drop_down,
-                    ),
-                    initialSelection: dropdownValue,
-                    onSelected: (int? value) {
-                      setState(() {
-                        dropdownValue = value!;
-                      });
-                    },
-                    dropdownMenuEntries:
-                        list.map<DropdownMenuEntry<int>>((int value) {
-                      return DropdownMenuEntry<int>(
-                        value: value,
-                        label: value.toString(),
-                      );
-                    }).toList(),
-                  ),
+                  Expanded(
+                      child: Text(
+                    beverage.description,
+                    style: TextStyle(color: textColor),
+                  ))
                 ],
               ),
+              Gap(SizeUtils.width * 0.04),
+              Text(
+                "Choice of Cup Filling",
+                style: context.inter50016
+                    .copyWith(fontWeight: FontWeight.w700, color: textColor),
+              ),
+              Gap(SizeUtils.width * 0.04),
+              const Row(
+                children: [
+                  MiniButton(
+                    buttonLabels: ["Full", "1/2 Full", "3/4 Full", "1/4 Full"],
+                  )
+                ],
+              )
             ],
           ),
         ),
@@ -168,6 +198,61 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class MiniButton extends StatefulWidget {
+  final List<String> buttonLabels;
+  const MiniButton({
+    super.key,
+    required this.buttonLabels,
+  });
+
+  @override
+  State<MiniButton> createState() => _MiniButtonState();
+}
+
+class _MiniButtonState extends State<MiniButton> {
+  int? _selectedButtonIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: List.generate(widget.buttonLabels.length, (index) {
+          bool isSelected = _selectedButtonIndex == index;
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  _selectedButtonIndex = index;
+                });
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                decoration: BoxDecoration(
+                  color: isSelected ? buttonGreen : Colors.grey[300],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(
+                  widget.buttonLabels[index],
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: isSelected ? Colors.white : Colors.black,
+                    fontSize: 11,
+                  ),
+                ),
+              ),
+            ),
+          );
+        }),
       ),
     );
   }
