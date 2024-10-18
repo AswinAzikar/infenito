@@ -361,6 +361,9 @@ class $AssetsPngsGen {
   AssetGenImage get capuccino =>
       const AssetGenImage('assets/pngs/capuccino.png');
 
+  /// File path: assets/pngs/error 1.png
+  AssetGenImage get error1 => const AssetGenImage('assets/pngs/error 1.png');
+
   /// File path: assets/pngs/signup_bg.png
   AssetGenImage get signupBg =>
       const AssetGenImage('assets/pngs/signup_bg.png');
@@ -370,7 +373,7 @@ class $AssetsPngsGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [asset111, coffee211, capuccino, signupBg, waveHand];
+      [asset111, coffee211, capuccino, error1, signupBg, waveHand];
 }
 
 class $AssetsSvgsGen {
